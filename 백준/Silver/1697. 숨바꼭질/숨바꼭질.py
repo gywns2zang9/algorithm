@@ -1,11 +1,3 @@
-# from collections import deque
-# def bfs(start):
-#     queue = deque([start])
-#     visited =
-#     queue.popleft()
-
-# 숨바꼭질
-# N = 수빈, K = 동생
 N, K = map(int, input().split())
 
 q = [[N, 0]]
