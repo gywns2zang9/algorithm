@@ -1,15 +1,11 @@
 def solution(n, lost, reserve):
-    answer = n - len(lost) # 체육복이 있는 학생 수
-    
-    for l in lost:
-        if l in reserve:
-            reserve.remove(l-1)
-            answer += 1
-            
-        elif l > 1 and l-1 in reserve:
-            reserve.remove(l-1)
-            answer += 1
-        elif n > l and l+1 in reserve:
-            reserve.remove(l+1)
-            answer += 1
-    return answer
+    lost_students = set(lost) - set(reserve)
+    spare_students = set(reserve) - set(lost)
+
+    for student in sorted(spare_students):
+        if student - 1 in lost_students:
+            lost_students.remove(student - 1)
+        elif student + 1 in lost_students:
+            lost_students.remove(student + 1)
+
+    return n - len(lost_students)
