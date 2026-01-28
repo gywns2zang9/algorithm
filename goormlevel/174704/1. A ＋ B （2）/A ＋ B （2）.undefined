@@ -1,0 +1,3 @@
+A, B = map(float, input().split())
+sum  = A + B
+print("%.6f"%sum)
