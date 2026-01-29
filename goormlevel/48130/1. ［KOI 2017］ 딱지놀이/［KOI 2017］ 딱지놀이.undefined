@@ -1,0 +1,31 @@
+# 별 > 원 > 네모 > 세모 > 무승부 순
+# A, B ,D(무승부)
+N = int(input())
+games = [list(map(int, input().split())) for _ in range(2*N)]
+
+for n in range(N):
+	A = sorted(games[2*n][1:])
+	B = sorted(games[2*n+1][1:])
+	# print(A)
+	# print(B)
+	if A == B:
+		print('D')
+	while (len(A) > 0 or len(B) > 0):
+		if len(B) == 0:
+			print('A')
+			break
+		elif len(A) == 0:
+			print('B')
+			break
+		else:
+			a = A.pop()
+			b = B.pop()
+			if a > b:
+				print('A')
+				break
+			elif b > a:
+				print('B')
+				break
+
+	
+		
