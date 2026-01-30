@@ -1,0 +1,13 @@
+import sys
+input = sys.stdin.readline
+N, M = map(int, input().split())
+cards = list(int(input()) for _ in range(M))
+win = [0] * N
+for idx in range(1, len(cards) + 1):
+	if win[cards[idx-1]-1] == 0:
+		win[cards[idx-1]-1] = idx
+
+if 0 in win:
+	print(-1)
+else:
+	print(max(win))
