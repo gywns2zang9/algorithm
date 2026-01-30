@@ -1,0 +1,6 @@
+A, B = input().split()
+
+result_A = eval(A)
+result_B = eval(B)
+
+print(max(result_A, result_B))
