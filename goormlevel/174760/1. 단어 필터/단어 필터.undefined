@@ -1,0 +1,11 @@
+s, e = map(int, input().split())
+S = input()
+E = input()
+
+for i in range(10000):
+	E = E.replace(S, "")
+
+if E == "":
+    print("EMPTY")
+else:
+    print(E)
