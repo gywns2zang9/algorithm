@@ -1,0 +1,9 @@
+N = int(input())
+# 세로줄
+for i in range(N):
+# 가로줄
+	x = []
+	for j in range(1, N+1):
+		x.append(N * i + j)
+	print(*x)
+		
