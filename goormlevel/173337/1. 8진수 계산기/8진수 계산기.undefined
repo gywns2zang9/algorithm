@@ -1,0 +1,13 @@
+N = int(input())
+arr = list(map(int, input().split()))
+sum = sum(arr)
+result = []
+
+while sum > 0:
+	result.append(sum % 8)
+	sum = sum // 8
+
+result.reverse()
+
+for i in range(len(result)):
+	print(result[i], end='')
