@@ -1,0 +1,18 @@
+N, M = map(int, input().split())
+homes = list(map(int, input().split()))
+rains = [list(map(int, input().split())) for _ in range(M)]
+
+for m in range(M):
+	s, e = rains[m][0], rains[m][1]
+	if m % 3 == 0:
+		before = homes.copy()
+	
+	for i in range(s-1, e):
+		homes[i] += 1
+	
+	if m % 3 == 2:
+		for n in range(N):
+			if homes[n] != before[n]:
+				homes[n] -= 1
+
+print(*homes)
