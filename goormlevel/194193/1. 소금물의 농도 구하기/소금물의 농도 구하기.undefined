@@ -1,0 +1,4 @@
+N, M = map(int, input().split())
+salt = N * 0.07
+result = int((salt / (N + M)) * 10000)
+print('{:.2f}'.format(result / 100))
